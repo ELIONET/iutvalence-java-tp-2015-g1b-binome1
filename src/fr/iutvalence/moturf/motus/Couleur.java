@@ -1,26 +1,17 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * Classe permettant de manipuler les couleurs Vert/orange
- * @author Clément DOTT
+ * Couleurs de la case.
  *
+ * @author ClÃ©ment DOTT
+ * @version TODO
  */
-
-//TODO Revoir la notation des couleurs (Bool? Int?)
+//TODO Revoir la notation des couleurs (Bool? Int?) RÃ©ponse d'Anthony : pourquoi pas un enum ???
 public class Couleur {
-	
-	/**
-	 * Couleur Verte lorsque la lettre est dans le mot et bien placée
-	 */
-	public final static int VERT = 1;
-	
-	/**
-	 * Couleur Orange lorsque la lettre est dans le mot, mais mal placée
-	 */
-	public final static int ORANGE = 2;
-	
-	/**
-	 * Pas de couleur si la lettre n'est pas dans le mot
-	 */
-	public final static int NEUTRE = 3;
+    /** Couleur Verte lorsque la lettre est dans le mot et bien placÃ©e. */
+    public static final int VERT   = 1;
+    /** Couleur Orange lorsque la lettre est dans le mot, mais mal placÃ©e. */
+    public static final int ORANGE = 2;
+    /** Pas de couleur si la lettre n'est pas dans le mot. */
+    public static final int NEUTRE = 3;
 }
