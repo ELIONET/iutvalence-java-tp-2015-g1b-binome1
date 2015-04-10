@@ -1,34 +1,40 @@
 package fr.iutvalence.moturf.motus;
 
-/*
+ /**
  * 
- * 
+ * @author dottc , lionete
  */
 
 public class Tiles {
 	/**
 	 * Tiles color
+	 * 
 	 */
 	private final Color color;
 
 	/**
 	 * Character in the tiles
+	 * 
 	 */
 
 	private final char charac;
 
 	/**
-	 * Construire une case de couleur donnée.
+	 * Make a tile with a given color
 	 *
 	 * @param color
-	 *            la couleur voulue
+	 * 
 	 */
 	public Tiles(Color color, char c) {
 		this.charac = c;
 		this.color = color;
 	}
 
-	/** Obtenir la couleur de la case. */
+	/**
+	 * Get the case color
+	 * 
+	 * @return
+	 */
 	public Color getColor() {
 		return this.color;
 	}

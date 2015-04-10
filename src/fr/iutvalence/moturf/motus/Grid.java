@@ -1,15 +1,16 @@
 package fr.iutvalence.moturf.motus;
 
 /**
+ *
  * 
  * @author dottc, lionete
  *
+ * @version 1.1
  */
 
 public class Grid {
 	
-    /**
-     * 
+    /** 
      * Number of lines on the grid
      * 
      */
@@ -17,7 +18,6 @@ public class Grid {
     private static final int NB_LINES   = 7;
     
     /**
-     * 
      * Number of columns on the grid
      * 
      */
@@ -25,15 +25,13 @@ public class Grid {
     private static final int NB_COLUMNS = 8;
     
     /**
-     * 
-     * 
+     * Create a 2D table which contains references to tiles objects
      * 
      */
     
     private Tiles[][] tiles;
 
     /**
-     * 
      *Create the grid with the default line and column values
      * 
      */

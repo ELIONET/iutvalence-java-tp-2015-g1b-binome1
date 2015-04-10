@@ -1,7 +1,7 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * 
+ *
  * 
  * @author dottc, lionete
  * @version 2.0.0
@@ -9,7 +9,6 @@ package fr.iutvalence.moturf.motus;
 public class Player {
 
 	/**
-	 * 
 	 * Default score
 	 * 
 	 */
@@ -17,7 +16,6 @@ public class Player {
 	public static final int DEFAULT_SCORE = 0;
 	
 	/**
-	 * 
 	 * Player's name
 	 * 
 	 */
@@ -25,15 +23,13 @@ public class Player {
 	public final String name;
 	
 	/**
-	 * 
-	 * Score
+	 *  Score
 	 * 
 	 */
 	
 	public int score;
 
 	/**
-	 * 
 	 * Set player's name and default score
 	 * 
 	 * @param n

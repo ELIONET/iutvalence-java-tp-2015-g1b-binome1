@@ -1,6 +1,10 @@
 package fr.iutvalence.moturf.motus;
 
-/* TODO JAVADOC */
+/**
+ * 
+ * @author dottc , lionete
+ *
+ */
 public class Secret {
 	private final Tiles[] secret;
 

@@ -1,10 +1,12 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * 
+ *
  * 
  * @author dottc, lionete
  *
+ * v1.0
+ * 
  */
 
 /* TODO : JAVADOC */
