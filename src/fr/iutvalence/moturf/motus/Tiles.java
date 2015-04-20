@@ -1,46 +1,30 @@
 package fr.iutvalence.moturf.motus;
 
- /**
- * 
+/**
+ * TODO JAVADOC.
+ *
  * @author dottc , lionete
+ * @version TODO
  */
-
 public class Tiles {
-	/**
-	 * Tiles color
-	 * 
-	 */
-	private final Color color;
+    /** Tiles color. */
+    private final Color color;
+    /** Character in the tiles. */
+    private final char  charac;
 
-	/**
-	 * Character in the tiles
-	 * 
-	 */
+    /** Make a tile with a given color. */
+    public Tiles(Color color, char c) {
+        this.charac = c;
+        this.color = color;
+    }
 
-	private final char charac;
+    /** Get the tile color. */
+    public Color getColor() {
+        return this.color;
+    }
 
-	/**
-	 * Make a tile with a given color
-	 *
-	 * @param color
-	 * 
-	 */
-	public Tiles(Color color, char c) {
-		this.charac = c;
-		this.color = color;
-	}
-
-	/**
-	 * Get the case color
-	 * 
-	 * @return
-	 */
-	public Color getColor() {
-		return this.color;
-	}
-
-	@Override
-	public String toString() {
-		return String.format("%s(%c)", color, charac);
-	}
+    @Override
+    public String toString() {
+        return String.format("%s(%c)", color, charac);
+    }
 }

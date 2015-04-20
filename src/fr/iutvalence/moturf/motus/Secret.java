@@ -1,18 +1,22 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * 
- * @author dottc , lionete
+ * TODO JAVADOC.
  *
+ * @author dottc , lionete
+ * @version TODO
  */
 public class Secret {
-	private final Tiles[] secret;
+    /* TODO JAVADOC. */
+    private final Tiles[] secret;
 
-	public Secret(final String secret) {
-		// TODO String secret -> Tiles[] secret.
-	}
+    /* TODO JAVADOC. */
+    public Secret(final String secret) {
+        // TODO String secret -> Tiles[] secret.
+    }
 
-	public Tiles[] check(Tiles[] attempt) {
-		return null;
-	}
+    /* TODO JAVADOC. */
+    public Tiles[] check(final Tiles[] attempt) {
+        return null;
+    }
 }

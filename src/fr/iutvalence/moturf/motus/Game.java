@@ -1,30 +1,29 @@
 package fr.iutvalence.moturf.motus;
 
 /**
+ * TODO JAVADOC
  *
- * 
+
  * @author dottc, lionete
- *
- * v1.0
- * 
+ * @version 1.0
  */
-
-/* TODO : JAVADOC */
-
 public class Game {
+    /* TODO final ? */
+    /* TODO JAVADOC. */
+    public  Player player;
+    /* TODO final ? */
+    public  Grid   grid;
+    /* TODO final ? */
+    private Secret secret;
 
-	
-	private Secret secret;
-	public Player player;
-	public Grid grid;
-	
-	public Game(final String secret, final String player) {
-		this.secret = new Secret(secret);
-		this.player = new Player(player);
-		grid = new Grid();
-	}
+    /* TODO JAVADOC */
+    public Game(final String secret, final String player) {
+        this.secret = new Secret(secret);
+        this.player = new Player(player);
+        grid = new Grid();
+    }
 
-	public void start() {
-		
-	}
+    /* TODO JAVADOC */
+    public void start() {
+    }
 }
