@@ -1,7 +1,7 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * TODO JAVADOC.
+ * TODO JAVADOC. Tiles class
  *
  * @author dottc , lionete
  * @version TODO

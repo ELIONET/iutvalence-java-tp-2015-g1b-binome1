@@ -1,21 +1,18 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * TODO JAVADOC.
+ * TODO JAVADOC. Plater Class
  *
  * @author dottc, lionete
  * @version 2.0.0
  */
 public class Player {
-    /* TODO Private ? */
     /** Default score. */
-    public static final int DEFAULT_SCORE = 0;
-    /* TODO Private ? */
+    private static final int DEFAULT_SCORE = 0;
     /** Player's name. */
-    public final String name;
-    /* TODO Private ? */
+    private final String name;
     /** Score. */
-    public       int    score;
+    private       int    score;
 
     /** Set player's name and default score. */
     public Player(String n) {

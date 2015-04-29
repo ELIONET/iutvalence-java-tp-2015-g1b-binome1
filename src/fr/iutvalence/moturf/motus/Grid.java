@@ -1,7 +1,7 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * TODO JAVADOC.
+ * TODO JAVADOC. Grid class
  *
  * @author dottc, lionete
  * @version 1.1
@@ -23,5 +23,10 @@ public class Grid {
     public String toString() {
         // TODO Auto-generated method stub
         return super.toString();
+    }
+    
+    public String toString(final int n) {
+    	// TODO
+    	return super.toString();
     }
 }

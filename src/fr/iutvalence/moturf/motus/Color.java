@@ -1,7 +1,7 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * TODO JAVADOC.
+ * TODO JAVADOC. Color class
  *
  * @author dottc, lionete
  * @version 2.0.0
@@ -21,6 +21,15 @@ public enum Color {
      */
     NEUTRAL("N");
 
-    /* TODO Complete this class. This enum can't compile!!! */
+    private final String repr;
+    
+    Color(final String repr) {
+    	this.repr = repr;
+    }
+    
+    @Override
+    public String toString() {
+    	return repr;
+    }
 }
 
