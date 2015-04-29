@@ -1,17 +1,21 @@
 package fr.iutvalence.moturf.motus;
 
+
 /**
  * TODO JAVADOC. Secret Word class
  *
  * @author dottc , lionete
  * @version 1.0
  */
+
+
 public class Secret {
     /* Secret Word*/
     private final Tiles[] secret;
 
     /* Turn secret word from tiles to string */
     public Secret(final String secret) {
+    	
         // TODO String secret -> Tiles[] secret.
     }
 

@@ -21,15 +21,15 @@ public enum Color {
      */
     NEUTRAL("N");
 
-    private final String repr;
+    private final String representation;
     
-    Color(final String repr) {
-    	this.repr = repr;
+    Color(final String representation) {
+    	this.representation = representation;
     }
     
     @Override
     public String toString() {
-    	return repr;
+    	return representation;
     }
 }
 
