@@ -3,5 +3,5 @@ Motus
 
 ## Remarks
 
-- 04/21/2015:
-    - Work on your project to end the modeling before the next practical session, please. It's not a long job.
+- 04/30/2015:
+    - During evaluation, I will remove points for all TODO remaining in your project…
