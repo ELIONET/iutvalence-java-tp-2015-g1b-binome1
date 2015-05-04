@@ -1,4 +1,5 @@
 package fr.iutvalence.moturf.motus;
+import java.util.Scanner;
 
 /**
  * TODO JAVADOC Game Class
@@ -26,7 +27,7 @@ public class Game {
     /* TODO JAVADOC */
     public void start() {
     	int turn = 0;
-    	boolean victory = false;
+    	boolean victory = true;
     	while (turn < Grid.NB_LINES) {
     		System.out.println(grid.toString(turn));
     		// TODO Nouvelle ligne à saisir
@@ -35,10 +36,12 @@ public class Game {
     		Tiles[] answer = secret.check(guess);
     		//grid.setLine(answer, turn);
     		for(int k=0; k < answer.length; k++){
-    		//TODO 
+    			if(answer[k].getColor()!=Color.GREEN){
+    				victory = false;
+    			}
     		}
     		if(victory)
-    			System.out.println("You won in "+turn+" turns !")
+    			System.out.println("You won in "+turn+" turns !");
     		//if (secret.check(s) = secret)                      
     		turn = turn+1;
     		// TODO mettre à jour turn et vérifier la victoire
