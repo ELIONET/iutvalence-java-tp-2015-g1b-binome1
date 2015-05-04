@@ -41,9 +41,8 @@ public class Grid {
 				if (tiles[line][column] != null)
 					total += "|" + tiles[line][column].toString();
 			}
-			total += "| \n";
 		}
-		total += "_ _ _ _ _ _ _ _\n";
+		total += "|_ _ _ _ _ _ _ _| - Try number "+(n+1);
 		return total;
 	}
     
