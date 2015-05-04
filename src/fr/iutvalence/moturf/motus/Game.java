@@ -26,14 +26,21 @@ public class Game {
     /* TODO JAVADOC */
     public void start() {
     	int turn = 0;
+    	boolean victory = false;
     	while (turn < Grid.NB_LINES) {
     		System.out.println(grid.toString(turn));
     		// TODO Nouvelle ligne à saisir
-    		String s = "TENTATIVE";
+    		String guess = "TENTATIVE";
     		// TODO En retour de check vous aurez ce qu'il faut mettre dans la grid
-    		secret.check(s);
-    		if (secret.check(s) = secret)                      
-    		turn = turn+1
+    		Tiles[] answer = secret.check(guess);
+    		//grid.setLine(answer, turn);
+    		for(int k=0; k < answer.length; k++){
+    		//TODO 
+    		}
+    		if(victory)
+    			System.out.println("You won in "+turn+" turns !")
+    		//if (secret.check(s) = secret)                      
+    		turn = turn+1;
     		// TODO mettre à jour turn et vérifier la victoire
     	}
     }

@@ -18,6 +18,11 @@ public class Tiles {
         this.color = color;
     }
 
+    public Tiles(char c) {
+        this.charac = c;
+        this.color = Color.NEUTRAL;
+    }
+    
     /** Get the tile color. */
     public Color getColor() {
         return this.color;

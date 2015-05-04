@@ -1,7 +1,7 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * TODO JAVADOC. Plater Class
+ * TODO JAVADOC. Player Class
  *
  * @author dottc, lionete
  * @version 2.0.0

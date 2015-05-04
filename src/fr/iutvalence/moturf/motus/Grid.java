@@ -33,17 +33,18 @@ public class Grid {
     }
     
     /* total is the whole grid */
-    public String toString(final int n) {
-    	// TODO afficher underscore sur la dernière ligne
-    	String total = "";
-    	for (int line = 0 ; line < n-1; line++){
-    		for (int column = 0 ; column < NB_COLUMNS ; column++){
-    			total += "|" + tiles[line][column].toString();
-    	}
-    	total += "| \n";
-    	}
-    	return total;
-    }
-    
+	public String toString(final int n) {
+		// TODO afficher underscore sur la dernière ligne
+		String total = "";
+		for (int line = 0; line < n - 1; line++) {
+			for (int column = 0; column < NB_COLUMNS; column++) {
+				if (tiles[line][column] != null)
+					total += "|" + tiles[line][column].toString();
+			}
+			total += "| \n";
+		}
+		total += "_ _ _ _ _ _ _ _\n";
+		return total;
+	}
     
 }

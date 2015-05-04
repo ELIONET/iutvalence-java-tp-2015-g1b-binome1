@@ -16,7 +16,7 @@ public class Secret {
     /* Turn secret word from tiles to string */
     public Secret(final String secret) {
     	
-        // TODO String secret -> Tiles[] secret.
+    	this.secret = stringToTilesArray(secret);
     }
 
     /* TODO JAVADOC. */
@@ -27,6 +27,11 @@ public class Secret {
     }
     
     private static Tiles[] stringToTilesArray(final String s) {
-    	// TODO Convertir String en Tiles[]
+    	Tiles[] array = new Tiles[s.length()];
+    	for (int i = 0; i < s.length(); i++){
+    		array[i] = new Tiles(s.charAt(i));
+    	}
+    	
+    	return array;
     }
 }
