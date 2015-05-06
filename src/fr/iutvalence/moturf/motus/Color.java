@@ -1,7 +1,7 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * Color class
+ * Color class.
  *
  * @author dottc, lionete
  * @version 2.0.0
@@ -23,15 +23,15 @@ public enum Color {
 
     /* TODO JAVADOC. */
     private final String representation;
-    
+
     /* TODO JAVADOC. */
     Color(final String representation) {
-    	this.representation = representation;
+        this.representation = representation;
     }
-    
+
     @Override
     public String toString() {
-    	return representation;
+        return representation;
     }
 }
 
