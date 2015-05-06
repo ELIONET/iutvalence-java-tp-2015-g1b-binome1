@@ -1,4 +1,6 @@
-/* Main Package
+/**
+ * Main Package.
+ *
  * @author dottc, lionete
  * @version 1.0
  */

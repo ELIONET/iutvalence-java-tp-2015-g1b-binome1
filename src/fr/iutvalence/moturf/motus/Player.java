@@ -1,7 +1,7 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * Player Class
+ * Player Class.
  *
  * @author dottc, lionete
  * @version 2.0.0
@@ -20,18 +20,23 @@ public class Player {
         score = DEFAULT_SCORE;
     }
 
+    /* TODO Unused method? */
     /** Get player's name. */
     public String getName() {
         return name;
     }
 
+    /* TODO Unused method? */
     /** Set player's score. */
     public void setScore() {
         this.score = this.score + 1;
     }
 
+    /* TODO Unused method? */
     /** Get player's score. */
     public int getScore() {
         return score;
     }
+
+    // TODO toString ?
 }

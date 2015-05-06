@@ -7,10 +7,10 @@ package fr.iutvalence.moturf.motus;
  * @version TODO
  */
 public class Tiles {
-    /** Tiles color. */
-    private Color color;
     /** Character in the tiles. */
     private final char  charac;
+    /** Tiles color. */
+    private       Color color;
 
     /** Make a tile with a given color. */
     public Tiles(Color color, char c) {
@@ -19,18 +19,17 @@ public class Tiles {
     }
 
     public Tiles(char c) {
-        this.charac = c;
-        this.color = Color.NEUTRAL;
+        this(Color.NEUTRAL, c);
     }
-    
+
     /** Get the tile color. */
     public Color getColor() {
         return this.color;
     }
-    
+
     /** Set the tile color after check. */
     public void setColor(Color newcolor) {
-    	this.color=newcolor;
+        this.color = newcolor;
     }
 
     @Override
