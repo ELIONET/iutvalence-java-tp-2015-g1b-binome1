@@ -31,8 +31,11 @@ public class Secret {
 						if(tilesattempt[y]==secret[z]){
 							counterOfThisLetter++;
 						}
-					for(z = 0; z <
+					while(z < secret.length && tilesattempt[y]!=secret[z]){
+						z++;
+						//TODO : Si counter < nombre de cette lettre déjà vérifié, on met la lettre actuelle en Orange, sinon en "Neutre"
 					}
+				}
 					while(counter < secret.length && tilesattempt[y] != secret[counter]){
 						counter++;
 						if(counter<secret.length){
@@ -42,8 +45,12 @@ public class Secret {
 				}
 			}
 			// TODO Vérifier la concordance entre t et secret en modifiant t
-			return tilesattempt;
+			
 		}
+		
+		return tilesattempt;
+		
+	}
 
 	private static Tiles[] stringToTilesArray(final String s) {
 		Tiles[] array = new Tiles[s.length()];
