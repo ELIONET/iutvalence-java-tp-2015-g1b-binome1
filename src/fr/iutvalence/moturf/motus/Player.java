@@ -1,7 +1,7 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * TODO JAVADOC. Player Class
+ * Player Class
  *
  * @author dottc, lionete
  * @version 2.0.0
@@ -25,7 +25,6 @@ public class Player {
         return name;
     }
 
-    /* TODO The name and the behavior of this method are pretty strange… */
     /** Set player's score. */
     public void setScore() {
         this.score = this.score + 1;

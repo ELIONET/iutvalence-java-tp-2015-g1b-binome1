@@ -8,7 +8,7 @@ package fr.iutvalence.moturf.motus;
  */
 public class Tiles {
     /** Tiles color. */
-    private final Color color;
+    private Color color;
     /** Character in the tiles. */
     private final char  charac;
 
@@ -26,6 +26,11 @@ public class Tiles {
     /** Get the tile color. */
     public Color getColor() {
         return this.color;
+    }
+    
+    /** Set the tile color after check. */
+    public void setColor(Color newcolor) {
+    	this.color=newcolor;
     }
 
     @Override
