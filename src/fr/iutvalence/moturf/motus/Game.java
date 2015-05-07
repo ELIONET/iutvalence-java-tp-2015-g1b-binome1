@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Game {
     /* TODO public ? */
     /** Player. */
-    public final  Player player;
+    private final  Player player;
     /* TODO public ? */
     /** Grid. */
     public final  Grid   grid;
@@ -41,6 +41,7 @@ public class Game {
             // TODO Vérifier que attempt soit bien une chaîne de 8 caractères
             // TODO grid.setLine(answer, turn);
             for (Tiles tile : answer) {
+            	System.out.println(tile.getColor());
                 if (tile.getColor() != Color.GREEN) {
                     victory = false;
                 }
@@ -48,10 +49,13 @@ public class Game {
 
             if (victory) {
                 /* TODO If you have victory boolean why use break ? */
-                System.out.println("You won in " + turn + " turns !");
+                System.out.println("Congratulation! You won in " + turn + " turns !");
                 break;
             }
+            
             turn++;
         }
+        System.out.println("Sorry, you lost !");
+        scattempt.close();
     }
 }

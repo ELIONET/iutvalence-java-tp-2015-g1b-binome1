@@ -29,34 +29,37 @@ public class Secret {
     /* TODO Achieve this method for the next session
     /* TODO JAVADOC. */
     public Tiles[] check(final String attempt) {
-        int counterOfThisLetter = 0;
-        int counter = 0;
+        int counterOfThisLetterInSecret;
+        int counterOfThisLetterInAttempt ;
         Tiles[] tilesattempt = stringToTilesArray(attempt);
         for (int y = 0; y < attempt.length(); y++) {
             // TODO Warning !!! You compare refs not values !
             if (tilesattempt[y] == secret[y]) {
                 tilesattempt[y].setColor(Color.GREEN);
             }
-            // TODO y is already your main loop index.
-            for (y = 0; y < attempt.length(); y++) {
+            for (int x = 0; x < attempt.length(); x++) {
                 if (tilesattempt[y].getColor() == Color.NEUTRAL) {
+                	counterOfThisLetterInSecret = 0;
+                	counterOfThisLetterInAttempt = 0;
                     for (int z = 0; z < secret.length; z++) {
                         // TODO Warning !!! You compare refs not values !
                         if (tilesattempt[y] == secret[z]) {
-                            counterOfThisLetter++;
+                            counterOfThisLetterInSecret++;
                         }
-                        while ((z < secret.length) && (tilesattempt[y] != secret[z])) {
-                            z++;
-                            //TODO : Si counter < nombre de cette lettre déjà vérifié, on met la lettre actuelle en Orange, sinon en "Neutre"
+                        for (int w = 0; w < y; w++){
+                        	if (tilesattempt[w]==tilesattempt[y]){
+                        		counterOfThisLetterInAttempt++;
+                        	}
+                        	if(counterOfThisLetterInAttempt<=counterOfThisLetterInSecret){
+                        		tilesattempt[y].setColor(Color.ORANGE);}                        	
+                        	else{
+                        		tilesattempt[y].setColor(Color.NEUTRAL);}
                         }
-                    }
-                    while ((counter < secret.length) && (tilesattempt[y] != secret[counter])) {
-                        counter++;
-                        if (counter < secret.length) {
-                            tilesattempt[y].setColor(Color.ORANGE);
-                        }
-                    }
+                        
+                    }  
+                    
                 }
+                
             }
             // TODO Vérifier la concordance entre t et secret en modifiant t
 
