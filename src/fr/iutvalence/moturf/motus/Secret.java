@@ -33,27 +33,27 @@ public class Secret {
         int counterOfThisLetterInAttempt ;
         Tiles[] tilesattempt = stringToTilesArray(attempt);
         for (int y = 0; y < attempt.length(); y++) {
-            // TODO Warning !!! You compare refs not values !
-            if (tilesattempt[y] == secret[y]) {
+        	System.out.println("tilesattempt[y]:" + tilesattempt[y] + " secret[y]:" + secret[y]);
+        	System.out.println(tilesattempt[y].getChar() == secret[y].getChar());
+            if (tilesattempt[y].getChar() == secret[y].getChar()) {
                 tilesattempt[y].setColor(Color.GREEN);
             }
             for (int x = 0; x < attempt.length(); x++) {
-                if (tilesattempt[y].getColor() == Color.NEUTRAL) {
+                if (tilesattempt[x].getColor() == Color.NEUTRAL) {
                 	counterOfThisLetterInSecret = 0;
                 	counterOfThisLetterInAttempt = 0;
                     for (int z = 0; z < secret.length; z++) {
-                        // TODO Warning !!! You compare refs not values !
-                        if (tilesattempt[y] == secret[z]) {
+                        if (tilesattempt[x].getChar() == secret[z].getChar()) {
                             counterOfThisLetterInSecret++;
                         }
-                        for (int w = 0; w < y; w++){
-                        	if (tilesattempt[w]==tilesattempt[y]){
+                        for (int w = 0; w < x; w++){
+                        	if (tilesattempt[w].getChar()==tilesattempt[x].getChar()){
                         		counterOfThisLetterInAttempt++;
                         	}
                         	if(counterOfThisLetterInAttempt<=counterOfThisLetterInSecret){
-                        		tilesattempt[y].setColor(Color.ORANGE);}                        	
+                        		tilesattempt[x].setColor(Color.ORANGE);}                        	
                         	else{
-                        		tilesattempt[y].setColor(Color.NEUTRAL);}
+                        		tilesattempt[x].setColor(Color.NEUTRAL);}
                         }
                         
                     }  
@@ -61,7 +61,6 @@ public class Secret {
                 }
                 
             }
-            // TODO Vérifier la concordance entre t et secret en modifiant t
 
         }
 

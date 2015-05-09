@@ -10,7 +10,7 @@ public class Tiles {
     /** Character in the tiles. */
     private final char  charac;
     /** Tiles color. */
-    private       Color color;
+    private Color color;
 
     /** Make a tile with a given color. */
     public Tiles(Color color, char c) {
@@ -35,5 +35,10 @@ public class Tiles {
     @Override
     public String toString() {
         return String.format("%s(%c)", color, charac);
+    }
+    
+    /** Get the char of the tiles**/
+    public char getChar() {
+    	return this.charac;
     }
 }
