@@ -10,7 +10,9 @@ public class Secret {
     /** Secret Word. */
     private final Tiles[] secret;
 
-    /* TODO. */
+    /**
+     * Turn the secret word into tiles
+     * */
     public Secret(final String secret) {
 
         this.secret = stringToTilesArray(secret);
@@ -26,7 +28,11 @@ public class Secret {
         return array;
     }
 
-    /* TODO JAVADOC. */
+    /**
+     * Check the letter from Secret and try.
+     * Check the Secret and the word from the player. Check each letter (tile) from Secret and try from player
+     * and determines if it's the right letter (Green) Wrong (Neutral) or in the Secet, but misplaced (Orange)
+     * */
     public Tiles[] check(final String attempt) {
         int counterOfThisLetterInSecret;
         int counterOfThisLetterInAttempt;

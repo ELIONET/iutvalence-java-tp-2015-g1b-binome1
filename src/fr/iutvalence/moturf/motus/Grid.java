@@ -1,7 +1,7 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * TODO JAVADOC. Grid class
+ *Grid class
  *
  * @author dottc, lionete
  * @version 1.1
@@ -34,7 +34,10 @@ public class Grid {
         return total;
     }
 
-    /* total is the whole grid */
+    /**
+     *  total is the whole grid
+     * 
+     */
     public String toString(final int n) {
         // TODO StringBuilder
         String total = "";
