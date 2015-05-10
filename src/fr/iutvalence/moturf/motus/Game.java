@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Game {
     /* TODO public ? */
     /** Player. */
-    private final  Player player;
+    private static Player player;
     /* TODO public ? */
     /** Grid. */
     public final  Grid   grid;
@@ -27,18 +27,20 @@ public class Game {
 
     /* TODO JAVADOC */
     public void start() {
-        /* TODO close your Scanner at the end. */
         Scanner scattempt = new Scanner(System.in);
 
         int turn = 0;
-        boolean victory = true;
-        while (turn < Grid.NB_LINES) {
-            System.out.println(grid.toString(turn));
+        boolean victory=false;
+        while ((turn < Grid.NB_LINES) && (!victory)) {
+        	victory=true;
             // TODO Why '8' ?
             System.out.println("Please, choose a word of 8 letters");
             String attempt = scattempt.nextLine();
+            while(attempt.length() != 8){
+            	System.out.println("Your attempt length isn't equal to 8, please chose a new word.");
+            	attempt = scattempt.nextLine();
+            }
             Tiles[] answer = secret.check(attempt);
-            // TODO Vérifier que attempt soit bien une chaîne de 8 caractères
             // TODO grid.setLine(answer, turn);
             for (Tiles tile : answer) {
             	System.out.println(tile.getColor());
@@ -46,16 +48,18 @@ public class Game {
                     victory = false;
                 }
             }
+            
+            System.out.println(grid.toString(turn));
 
             if (victory) {
-                /* TODO If you have victory boolean why use break ? */
-                System.out.println("Congratulation! You won in " + turn + " turns !");
-                break;
+                System.out.println("Congratulation! You won in " + (turn+1) + " turns !");
             }
             
             turn++;
         }
-        System.out.println("Sorry, you lost !");
+        if(turn == Grid.NB_LINES){
+        	System.out.println("Sorry, you lost !");
+        }
         scattempt.close();
     }
 }

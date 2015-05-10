@@ -40,7 +40,9 @@ public class Grid {
         String total = "";
         for (int line = 0; line < (n - 1); line++) {
             for (int column = 0; column < NB_COLUMNS; column++) {
-                if (tiles[line][column] != null) { total += "|" + tiles[line][column]; }
+                if (tiles[line][column] != null){
+                total += "|" + tiles[line][column]; 
+                }
             }
         }
         total += "|_ _ _ _ _ _ _ _| - Try number " + (n + 1);

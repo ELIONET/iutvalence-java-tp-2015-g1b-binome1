@@ -30,40 +30,35 @@ public class Secret {
     /* TODO JAVADOC. */
     public Tiles[] check(final String attempt) {
         int counterOfThisLetterInSecret;
-        int counterOfThisLetterInAttempt ;
+        int counterOfThisLetterInAttempt;
         Tiles[] tilesattempt = stringToTilesArray(attempt);
         for (int y = 0; y < attempt.length(); y++) {
-        	System.out.println("tilesattempt[y]:" + tilesattempt[y] + " secret[y]:" + secret[y]);
-        	System.out.println(tilesattempt[y].getChar() == secret[y].getChar());
             if (tilesattempt[y].getChar() == secret[y].getChar()) {
                 tilesattempt[y].setColor(Color.GREEN);
             }
+        }
             for (int x = 0; x < attempt.length(); x++) {
-                if (tilesattempt[x].getColor() == Color.NEUTRAL) {
+                if (tilesattempt[x].getColor() != Color.GREEN) {
                 	counterOfThisLetterInSecret = 0;
                 	counterOfThisLetterInAttempt = 0;
                     for (int z = 0; z < secret.length; z++) {
                         if (tilesattempt[x].getChar() == secret[z].getChar()) {
                             counterOfThisLetterInSecret++;
                         }
-                        for (int w = 0; w < x; w++){
-                        	if (tilesattempt[w].getChar()==tilesattempt[x].getChar()){
+                    }
+                        for (int w = 0; w <= x; w++){
+                        	if (tilesattempt[x].getChar()==tilesattempt[w].getChar()){
                         		counterOfThisLetterInAttempt++;
                         	}
-                        	if(counterOfThisLetterInAttempt<=counterOfThisLetterInSecret){
-                        		tilesattempt[x].setColor(Color.ORANGE);}                        	
-                        	else{
-                        		tilesattempt[x].setColor(Color.NEUTRAL);}
+                        }
+                        	if(counterOfThisLetterInAttempt<=counterOfThisLetterInSecret)
+                        		tilesattempt[x].setColor(Color.ORANGE);                        	
+                        	else
+                        		tilesattempt[x].setColor(Color.NEUTRAL);
                         }
                         
                     }  
-                    
-                }
-                
-            }
 
-        }
-
-        return tilesattempt;
+          return tilesattempt;
     }
 }
