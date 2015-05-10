@@ -56,6 +56,7 @@ public class Game {
             }
             
             turn++;
+            
         }
         if(turn == Grid.NB_LINES){
         	System.out.println("Sorry, you lost !");

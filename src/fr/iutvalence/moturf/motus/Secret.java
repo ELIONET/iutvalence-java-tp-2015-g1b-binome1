@@ -26,7 +26,6 @@ public class Secret {
         return array;
     }
 
-    /* TODO Achieve this method for the next session
     /* TODO JAVADOC. */
     public Tiles[] check(final String attempt) {
         int counterOfThisLetterInSecret;
