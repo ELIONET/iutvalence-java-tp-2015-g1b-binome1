@@ -3,7 +3,7 @@ package fr.iutvalence.moturf.motus;
 import java.util.Scanner;
 
 /**
- * TODO JAVADOC Game Class
+ * Game Class
  *
  * @author dottc, lionete
  * @version 1.0
@@ -18,17 +18,18 @@ public class Game {
 	/** Secret word. */
 	private final Secret secret;
 
-	/* TODO JAVADOC */
-	public Game(String secret, String player) {
-		this.secret = new Secret(secret);
-		this.player = new Player(player);
-		grid = new Grid();
-	}
+    /* TODO JAVADOC */
+	    public Game(String secret, String player) {
+	        this.secret = new Secret(secret);
+	        this.player = new Player(player);
+	        grid = new Grid();
+	    }
 
-	/* TODO JAVADOC */
-	public void start() {
-		Scanner scattempt = new Scanner(System.in);
-
+    /**
+     * Start the game
+     */
+    public void start() {
+        Scanner scattempt = new Scanner(System.in);
 		int turn = 0;
 		boolean victory = false;
 		while ((turn < Grid.NB_LINES) && (!victory)) {

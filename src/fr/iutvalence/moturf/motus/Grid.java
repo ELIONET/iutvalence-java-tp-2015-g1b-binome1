@@ -1,7 +1,7 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * TODO JAVADOC. Grid class
+ *Grid class
  *
  * @author dottc, lionete
  * @version 1.1

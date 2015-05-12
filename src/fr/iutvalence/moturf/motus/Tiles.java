@@ -1,7 +1,8 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * TODO JAVADOC. Tiles class
+ * Tiles class
+ * This class contains everything to make tiles inside the grid (Turn string into Tiles, Color etc...)
  *
  * @author dottc , lionete
  * @version TODO

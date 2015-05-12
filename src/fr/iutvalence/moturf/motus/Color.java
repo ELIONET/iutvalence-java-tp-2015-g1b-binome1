@@ -21,10 +21,15 @@ public enum Color {
      */
     NEUTRAL("N");
 
-    /* TODO JAVADOC. */
+    /**
+     *Color represnetation 
+     */
     private final String representation;
 
-    /* TODO JAVADOC. */
+    /**
+     * Get the color representation
+     */
+    
     Color(final String representation) {
         this.representation = representation;
     }

@@ -10,9 +10,10 @@ public class Secret {
 	/** Secret Word. */
 	private final Tiles[] secret;
 
-	/* TODO. */
-	public Secret(final String secret) {
-
+    /**
+     * Turn the secret word into tiles
+     * */
+    public Secret(final String secret) {
 		this.secret = stringToTilesArray(secret);
 	}
 
@@ -60,7 +61,6 @@ public class Secret {
 				
 				tilesattempt[i].setColor(counterAttempt <= counterSecret ? Color.ORANGE : Color.NEUTRAL);
 			}
-
 		}
 
 		return tilesattempt;
