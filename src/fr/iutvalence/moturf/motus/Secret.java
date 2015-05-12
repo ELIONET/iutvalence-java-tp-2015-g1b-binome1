@@ -7,57 +7,62 @@ package fr.iutvalence.moturf.motus;
  * @version 1.0
  */
 public class Secret {
-    /** Secret Word. */
-    private final Tiles[] secret;
+	/** Secret Word. */
+	private final Tiles[] secret;
 
-    /* TODO. */
-    public Secret(final String secret) {
+	/* TODO. */
+	public Secret(final String secret) {
 
-        this.secret = stringToTilesArray(secret);
-    }
+		this.secret = stringToTilesArray(secret);
+	}
 
-    /* TODO JAVADOC. */
-    private static Tiles[] stringToTilesArray(final String s) {
-        Tiles[] array = new Tiles[s.length()];
-        for (int i = 0; i < s.length(); i++) {
-            array[i] = new Tiles(s.charAt(i));
-        }
+	/* TODO JAVADOC. */
+	private static Tiles[] stringToTilesArray(final String s) {
+		Tiles[] array = new Tiles[s.length()];
+		for (int i = 0; i < s.length(); i++) {
+			array[i] = new Tiles(s.charAt(i));
+		}
 
-        return array;
-    }
+		return array;
+	}
 
-    /* TODO JAVADOC. */
-    public Tiles[] check(final String attempt) {
-        int counterOfThisLetterInSecret;
-        int counterOfThisLetterInAttempt;
-        Tiles[] tilesattempt = stringToTilesArray(attempt);
-        for (int y = 0; y < attempt.length(); y++) {
-            if (tilesattempt[y].getChar() == secret[y].getChar()) {
-                tilesattempt[y].setColor(Color.GREEN);
-            }
-        }
-            for (int x = 0; x < attempt.length(); x++) {
-                if (tilesattempt[x].getColor() != Color.GREEN) {
-                	counterOfThisLetterInSecret = 0;
-                	counterOfThisLetterInAttempt = 0;
-                    for (int z = 0; z < secret.length; z++) {
-                        if (tilesattempt[x].getChar() == secret[z].getChar()) {
-                            counterOfThisLetterInSecret++;
-                        }
-                    }
-                        for (int w = 0; w <= x; w++){
-                        	if (tilesattempt[x].getChar()==tilesattempt[w].getChar()){
-                        		counterOfThisLetterInAttempt++;
-                        	}
-                        }
-                        	if(counterOfThisLetterInAttempt<=counterOfThisLetterInSecret)
-                        		tilesattempt[x].setColor(Color.ORANGE);                        	
-                        	else
-                        		tilesattempt[x].setColor(Color.NEUTRAL);
-                        }
-                        
-                    }  
+	/* TODO JAVADOC. */
+	public Tiles[] check(final String attempt) {
+		Tiles[] tilesattempt = stringToTilesArray(attempt);
+		int length = attempt.length();
+		
+		// TODO Commentaire vert
+		for (int i = 0; i < length; i++) {
+			if (tilesattempt[i].getChar() == secret[i].getChar()) {
+				tilesattempt[i].setColor(Color.GREEN);
+			}
+		}
+		
+		// TODO Commentaire orange
+		for (int i = 0; i < length; i++) {
+			if (tilesattempt[i].getColor() != Color.GREEN) {
+				int counterSecret = 0;
+				for (int j = 0; j < length; j++) {
+					if (tilesattempt[i].getChar() == secret[j].getChar()) {
+						counterSecret++;
+					}
+				}
+				
+				int counterAttempt = 0;
+				for (int j = 0; j < length; j++) {
+					// TODO Commentaire sur la subtilité du j <= i
+					if (tilesattempt[i].getChar() == tilesattempt[j].getChar()) {
+						if (j <= i || tilesattempt[j].getColor() == Color.GREEN) {
+							counterAttempt++;
+						}
+					}
+				}
+				
+				tilesattempt[i].setColor(counterAttempt <= counterSecret ? Color.ORANGE : Color.NEUTRAL);
+			}
 
-          return tilesattempt;
-    }
+		}
+
+		return tilesattempt;
+	}
 }

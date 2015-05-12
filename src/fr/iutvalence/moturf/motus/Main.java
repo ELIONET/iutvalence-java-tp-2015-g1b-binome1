@@ -11,7 +11,7 @@ public class Main {
         Scanner scplayer = new Scanner(System.in);
         System.out.println("What's your name ?");
         String playername = scplayer.nextLine();
-        Game game = new Game("ABKKEFGH", playername);
+        Game game = new Game("ABCCEFGH", playername);
         game.start();
         scplayer.close();
     }
