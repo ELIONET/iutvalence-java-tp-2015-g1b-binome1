@@ -19,14 +19,13 @@ public class Grid {
         this.tiles = new Tiles[NB_LINES][NB_COLUMNS];
     }
 
-    
-    @Override
-    public String toString() {
-        // TODO StringBuilder
+    /*TODO Javadoc*/
+
+    public String toString(final int n) {
         String total = "";
-        for (int line = 0; line < NB_LINES; line++) {
+        for (int line = 0; line < (n+1); line++) {
             for (int column = 0; column < NB_COLUMNS; column++) {
-                total += "|" + tiles[line][column];
+                total += "|"+ tiles[line][column].getColor()+ ": " + tiles[line][column].getChar();
             }
             total += "| \n";
         }

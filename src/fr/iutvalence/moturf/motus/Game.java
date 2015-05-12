@@ -42,6 +42,7 @@ public class Game {
 			}
 			Tiles[] answer = secret.check(attempt);
 			grid.setLine(turn, answer);
+			System.out.println(grid.toString(turn));
 			for (Tiles tile : answer) {
 				if (tile.getColor() != Color.GREEN) {
 					victory = false;
