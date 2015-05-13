@@ -20,7 +20,6 @@ public class Grid {
     }
 
     /*TODO Javadoc*/
-
     public String toString(final int n) {
         String total = "";
         for (int line = 0; line < (n+1); line++) {
@@ -32,7 +31,7 @@ public class Grid {
         return total;
     }
 
-    /* total is the whole grid */
+    /* Total is the whole grid */
     public void setLine(final int n, final Tiles[] attemptplayer) {
         for (int i = 0; i < attemptplayer.length; i++) {
         	tiles[n][i] = attemptplayer[i];

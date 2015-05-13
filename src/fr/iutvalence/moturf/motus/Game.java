@@ -12,13 +12,14 @@ public class Game {
 	/* TODO public ? */
 	/** Player. */
 	private final Player player;
-	/* TODO public ? */
 	/** Grid. */
 	public final Grid grid;
 	/** Secret word. */
 	private final Secret secret;
 
-    /* TODO JAVADOC */
+    /**
+     * Create a new game using a Secret and a player
+     */
 	    public Game(String secret, String player) {
 	        this.secret = new Secret(secret);
 	        this.player = new Player(player);
@@ -34,7 +35,6 @@ public class Game {
 		boolean victory = false;
 		while ((turn < Grid.NB_LINES) && (!victory)) {
 			victory = true;
-			// TODO Why '8' ?
 			System.out.println("Please, choose a word of 8 capital letters");
 			String attempt = scattempt.nextLine();
 			while (attempt.length() != Grid.NB_COLUMNS) {

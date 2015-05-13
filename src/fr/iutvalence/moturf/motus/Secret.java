@@ -17,7 +17,9 @@ public class Secret {
 		this.secret = stringToTilesArray(secret);
 	}
 
-	/* TODO JAVADOC. */
+	/**
+	 * Turns a String (Attempt or secret for example) to Array
+	 */
 	private static Tiles[] stringToTilesArray(final String s) {
 		Tiles[] array = new Tiles[s.length()];
 		for (int i = 0; i < s.length(); i++) {
@@ -27,12 +29,19 @@ public class Secret {
 		return array;
 	}
 
-	/* TODO JAVADOC. */
+	/**
+	 * Method to check the player's attempt word and the secret word to see if they match.
+	 * Also put colors depending the letters in the attempt and secret
+	 */
 	public Tiles[] check(final String attempt) {
 		Tiles[] tilesattempt = stringToTilesArray(attempt);
 		int length = attempt.length();
 		
 		// TODO Commentaire vert
+		/**
+		 * If the letter is on the same spot in the secret and attempt
+		 * It will display G: (For GREEN)
+		 */
 		for (int i = 0; i < length; i++) {
 			if (tilesattempt[i].getChar() == secret[i].getChar()) {
 				tilesattempt[i].setColor(Color.GREEN);
@@ -40,6 +49,10 @@ public class Secret {
 		}
 		
 		// TODO Commentaire orange
+		/**
+		 * If the letter is not on the same spot in the secret word but in the player's attempt
+		 * It will display O: (For ORANGE), else it will display N: (For NEUTRAL)
+		 */
 		for (int i = 0; i < length; i++) {
 			if (tilesattempt[i].getColor() != Color.GREEN) {
 				int counterSecret = 0;
