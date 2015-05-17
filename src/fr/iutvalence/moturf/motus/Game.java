@@ -2,6 +2,7 @@ package fr.iutvalence.moturf.motus;
 
 import java.util.Scanner;
 
+
 /**
  * Game Class
  *
@@ -28,18 +29,18 @@ public class Game {
     /**
      * Start the game
      */
-    public void start() {
-        Scanner scattempt = new Scanner(System.in);
+	private Boolean Play(Scanner scattempt) {
+		
 		int turn = 0;
 		boolean victory = false;
+		boolean keepPlaying = false;
 		while ((turn < Grid.NB_LINES) && (!victory)) {
 			victory = true;
-			// TODO Why '8' ?
-			System.out.println("Please, choose a word of 8 capital letters");
-			String attempt = scattempt.nextLine();
+			System.out.println("Please, choose a word of 8");
+			String attempt = scattempt.nextLine().toUpperCase();
 			while (attempt.length() != Grid.NB_COLUMNS) {
 				System.out.println("Your attempt length isn't equal to 8, please chose a new word.");
-				attempt = scattempt.nextLine();
+				attempt = scattempt.nextLine().toUpperCase();
 			}
 			Tiles[] answer = secret.check(attempt);
 			grid.setLine(turn, answer);
@@ -58,8 +59,19 @@ public class Game {
 
 		}
 		if (turn == Grid.NB_LINES) {
-			System.out.println("Sorry, you lost !");
+			System.out.println("Sorry" + player.getName() +", you lost !");
 		}
-		scattempt.close();
+		System.out.println("Do you want to play again ? (yes/no)");
+		String answer = scattempt.nextLine();
+		if(answer=="yes")
+			keepPlaying=true;
+		return keepPlaying;
 	}
+
+    public void Start() {
+    	Scanner mainScanner = new Scanner(System.in);
+    	do{
+    	} while(Play(mainScanner));
+    	mainScanner.close();
+    }
 }
