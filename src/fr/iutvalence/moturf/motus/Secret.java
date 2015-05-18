@@ -13,6 +13,7 @@ import java.util.List;
  * @version 2.0
  */
 public class Secret {
+	/** Default secret. */
 	private final static String DEFAULT_SECRET = "MYSECRET";
 	/** Secret Word. */
 	private final Tiles[] secret;
@@ -64,7 +65,6 @@ public class Secret {
 		}
 		if(!error && listofsecrets.size()!=0){
 			int randomvalue = (int)(Math.random() * (listofsecrets.size()-1));
-			System.out.println(listofsecrets.get(randomvalue));
 			return listofsecrets.get(randomvalue);
 		}
 		return Secret.DEFAULT_SECRET;
@@ -90,7 +90,7 @@ public class Secret {
 		Tiles[] tilesattempt = stringToTilesArray(attempt);
 		int length = attempt.length();
 
-		/**
+		/*
 		 * If the letter is on the same spot in the secret and attempt
 		 * It will display G: (For GREEN)
 		 */
@@ -99,7 +99,7 @@ public class Secret {
 				tilesattempt[i].setColor(Color.GREEN);
 			}
 		}
-		/**
+		/*
 		 * If the letter is not on the same spot in the secret word but in the player's attempt
 		 * It will display O: (For ORANGE), else it will display N: (For NEUTRAL)
 		 */

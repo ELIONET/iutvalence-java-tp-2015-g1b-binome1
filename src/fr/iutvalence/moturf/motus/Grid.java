@@ -30,10 +30,13 @@ public class Grid {
             }
             total += "| \n";
         }
+        /* Total is the whole grid */
         return total;
     }
 
-    /* Total is the whole grid */
+    /**
+     * Set a line with an attempt.
+     */
     public void setLine(final int n, final Tiles[] attemptplayer) {
         for (int i = 0; i < attemptplayer.length; i++) {
         	tiles[n][i] = attemptplayer[i];
