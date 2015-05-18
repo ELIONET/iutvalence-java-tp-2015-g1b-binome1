@@ -17,10 +17,17 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		Scanner scplayer = new Scanner(System.in);
+		
 		System.out.println("What's your name ?");
 		String playername = scplayer.nextLine();
-		Game game = new Game(Secret.getRandomSecret().toUpperCase(), playername);
-		game.Start();
+		
+		boolean replay;
+		do {
+			Game game = new Game(Secret.getRandomSecret().toUpperCase(), playername, scplayer);
+			replay = game.start();
+		}
+		while(replay);
+		
 		scplayer.close();
 	}
 }

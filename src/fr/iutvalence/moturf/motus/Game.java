@@ -16,33 +16,35 @@ public class Game {
 	public final Grid grid;
 	/** Secret word. */
 	private final Secret secret;
+	/** Scanner. */
+	private Scanner scattempt;
 
     /**
      * Create a new game using a Secret and a player
      */
-	    public Game(String secret, String player) {
+	    public Game(String secret, String player, Scanner sc) {
 	        this.secret = new Secret(secret);
 	        this.player = new Player(player);
+	        this.scattempt = sc;
 	        grid = new Grid();
 	    }
 
-    /**
-     * Algorithm of the game. 
-     */
-	private Boolean Play(Scanner scattempt) {
+	/**
+	 * Start the game.
+	 */
+    public boolean start() {
 		
 		int turn = 0;
 		boolean victory = false;
-		boolean keepPlaying = true;
 		while ((turn < Grid.NB_LINES) && (!victory)) {
 			victory = true;
 
 			System.out.println("Please, choose a word of 8 letters");
-			String attempt = scattempt.nextLine().toUpperCase();
+			String attempt = scattempt.nextLine().toUpperCase().trim();
 
 			while (attempt.length() != Grid.NB_COLUMNS) {
-				System.out.println("Your attempt length isn't equal to 8, please chose a new word.");
-				attempt = scattempt.nextLine().toUpperCase();
+				System.err.println("Your attempt length isn't equal to 8, please chose a new word.");
+				attempt = scattempt.nextLine().toUpperCase().trim();
 			}
 			Tiles[] answer = secret.check(attempt);
 			grid.setLine(turn, answer);
@@ -60,23 +62,10 @@ public class Game {
 			turn++;
 
 		}
-		if (turn == Grid.NB_LINES) {
+		if (turn == Grid.NB_LINES && !victory) {
 			System.out.println("Sorry" + player.getName() +", you lost !");
 		}
 		System.out.println("Do you want to play again ? (yes/no)");
-		String answer = scattempt.nextLine();
-		if(answer=="yes")
-			keepPlaying=true;
-		return keepPlaying;
+		return scattempt.nextLine().toLowerCase().trim().equals("yes");
 	}
-
-	/**
-	 * Start the game.
-	 */
-    public void Start() {
-    	Scanner mainScanner = new Scanner(System.in);
-    	do{
-    	} while(Play(mainScanner));
-    	mainScanner.close();
-    }
 }
