@@ -22,14 +22,14 @@ public enum Color {
     NEUTRAL("N");
 
     /**
-     *Color represnetation 
+     *Color representation 
      */
     private final String representation;
 
+    
     /**
      * Get the color representation
-     */
-    
+     */    
     Color(final String representation) {
         this.representation = representation;
     }

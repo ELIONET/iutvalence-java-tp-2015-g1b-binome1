@@ -1,20 +1,73 @@
 package fr.iutvalence.moturf.motus;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
+
 /**
- * TODO JAVADOC. Secret Word class
+ * Secret Word class
  *
  * @author dottc , lionete
- * @version 1.0
+ * @version 2.0
  */
 public class Secret {
+	private final static String DEFAULT_SECRET = "MYSECRET";
 	/** Secret Word. */
 	private final Tiles[] secret;
 
-    /**
-     * Turn the secret word into tiles
-     * */
-    public Secret(final String secret) {
+	/**
+	 * Turn the secret word into tiles.
+	 * */
+	public Secret(final String secret) {
 		this.secret = stringToTilesArray(secret);
+	}
+	/**
+	 * Return the secret word.
+	 */
+	public static String getRandomSecret() {
+		List<String> listofsecrets = new LinkedList<String>();
+		BufferedReader br = null;
+		boolean error = false;
+		
+		try {
+			
+		br = new BufferedReader(new FileReader("./Dictionnary/listofsecrets.txt"));
+		
+			String line = br.readLine();
+
+			while (line != null) {
+				// The file contains words which are separated with at least one
+				// space and sometimes a comma.
+				line = line.replace(",", "");
+				String[] stringofsecrets = line.split(" ");
+				for (String word : stringofsecrets) {
+					listofsecrets.add(word);
+				}
+				line = br.readLine();
+			}
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Impossible to read the file");
+			error = true;
+		}
+		
+		finally {
+			
+			try {
+				br.close();
+			} catch (IOException e) {
+				System.err.println("Erreur");
+			}
+		}
+		if(!error && listofsecrets.size()!=0){
+			int randomvalue = (int)(Math.random() * (listofsecrets.size()-1));
+			System.out.println(listofsecrets.get(randomvalue));
+			return listofsecrets.get(randomvalue);
+		}
+		return Secret.DEFAULT_SECRET;
 	}
 
 	/**
@@ -36,8 +89,7 @@ public class Secret {
 	public Tiles[] check(final String attempt) {
 		Tiles[] tilesattempt = stringToTilesArray(attempt);
 		int length = attempt.length();
-		
-		// TODO Commentaire vert
+
 		/**
 		 * If the letter is on the same spot in the secret and attempt
 		 * It will display G: (For GREEN)
@@ -47,8 +99,6 @@ public class Secret {
 				tilesattempt[i].setColor(Color.GREEN);
 			}
 		}
-		
-		// TODO Commentaire orange
 		/**
 		 * If the letter is not on the same spot in the secret word but in the player's attempt
 		 * It will display O: (For ORANGE), else it will display N: (For NEUTRAL)
@@ -61,18 +111,21 @@ public class Secret {
 						counterSecret++;
 					}
 				}
-				
+
 				int counterAttempt = 0;
 				for (int j = 0; j < length; j++) {
-					// TODO Commentaire sur la subtilité du j <= i
+					// We have to count the number of the current letter already put in the attempt 
+					// (up to index i) and then add the number of the current letter put in the attempt with GREEN color.
 					if (tilesattempt[i].getChar() == tilesattempt[j].getChar()) {
 						if (j <= i || tilesattempt[j].getColor() == Color.GREEN) {
 							counterAttempt++;
 						}
 					}
 				}
-				
-				tilesattempt[i].setColor(counterAttempt <= counterSecret ? Color.ORANGE : Color.NEUTRAL);
+
+				tilesattempt[i]
+						.setColor(counterAttempt <= counterSecret ? Color.ORANGE
+								: Color.NEUTRAL);
 			}
 		}
 

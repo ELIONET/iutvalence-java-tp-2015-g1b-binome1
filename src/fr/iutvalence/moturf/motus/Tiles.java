@@ -5,7 +5,7 @@ package fr.iutvalence.moturf.motus;
  * This class contains everything to make tiles inside the grid (Turn string into Tiles, Color etc...)
  *
  * @author dottc , lionete
- * @version TODO
+ * @version 2.0
  */
 public class Tiles {
     /** Character in the tiles. */
@@ -18,7 +18,7 @@ public class Tiles {
         this.charac = c;
         this.color = color;
     }
-
+    /** Make a Tile with the "NEUTRAL" color. */
     public Tiles(char c) {
         this(Color.NEUTRAL, c);
     }

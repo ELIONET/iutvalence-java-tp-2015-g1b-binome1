@@ -4,7 +4,7 @@ package fr.iutvalence.moturf.motus;
  *Grid class
  *
  * @author dottc, lionete
- * @version 1.1
+ * @version 2.0
  */
 public class Grid {
     /** Number of lines on the grid. */
@@ -19,7 +19,9 @@ public class Grid {
         this.tiles = new Tiles[NB_LINES][NB_COLUMNS];
     }
 
-    /*TODO Javadoc*/
+    /**
+     * Allows to create the grid.
+     */
     public String toString(final int n) {
         String total = "";
         for (int line = 0; line < (n+1); line++) {
