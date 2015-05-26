@@ -4,8 +4,9 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 
-public class Window extends JFrame {
+public class Window extends JFrame implements Runnable {
 	
 	private final static int WIDTH = 600;
 	private final static int HEIGHT = 800;
@@ -14,17 +15,20 @@ public class Window extends JFrame {
 	
 	private PanelTextEntry textArea;
 	
+		@Override
+		public void run()
+		{
+			JFrame window = new JFrame();
 
+			window.setTitle("Motus");
+			window.setSize(HEIGHT, WIDTH);
+			
+			window.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
-	public Window() {
-		JButton button = new JButton("test");
-		JFrame window = new JFrame();
-		PanelTextEntry paneltext = new PanelTextEntry();
-		window.setTitle("Motus");
-		window.setSize(WIDTH, HEIGHT);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		mainPanel.add(button);
-		window.setVisible(true);
+			JButton bouton = new JButton("Ok");
+
+			window.getContentPane().add(bouton);
+
+			window.setVisible(true);
+		}
 	}
-
-}
