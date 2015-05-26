@@ -1,10 +1,6 @@
 package fr.iutvalence.moturf.motus.view;
 
-import javax.swing.JFrame;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 
 public class Window extends JFrame implements Runnable {
 	
@@ -18,17 +14,23 @@ public class Window extends JFrame implements Runnable {
 		@Override
 		public void run()
 		{
-			JFrame window = new JFrame();
-
-			window.setTitle("Motus");
+			JFrame window = new JFrame("Motus");
+			window.setVisible(true);
 			window.setSize(HEIGHT, WIDTH);
-			
 			window.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
-			JButton bouton = new JButton("Ok");
+			JLabel Instruction = new JLabel("Enter your guess (8 Char)");
+			JPanel P1 = new JPanel();
+			window.add(P1);
+			P1.add(Instruction);
+			
+			JTextField Input = new JTextField("Type your guess here");
+			P1.add(Input);
+			
+			
+			JButton button = new JButton("Ok");
+			P1.add(button);
 
-			window.getContentPane().add(bouton);
-
-			window.setVisible(true);
+			
 		}
 	}
