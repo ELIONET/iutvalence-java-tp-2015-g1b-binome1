@@ -53,7 +53,7 @@ public class Game {
 			grid.setLine(turn, answer);
 			System.out.println(grid.toString(turn));
 			for (Tiles tile : answer) {
-				if (tile.getColor() != Color.GREEN) {
+				if (tile.getColor() != GuessColor.GREEN) {
 					victory = false;
 				}
 			}

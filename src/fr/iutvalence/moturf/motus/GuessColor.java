@@ -1,12 +1,12 @@
 package fr.iutvalence.moturf.motus;
 
 /**
- * Color class.
+ * GuessColor class.
  *
  * @author dottc, lionete
  * @version 2.0.0
  */
-public enum Color {
+public enum GuessColor {
     /**
      * Green when the char is on the right position.
      */
@@ -22,7 +22,7 @@ public enum Color {
     NEUTRAL("N");
 
     /**
-     *Color representation 
+     *GuessColor representation 
      */
     private final String representation;
 
@@ -30,7 +30,7 @@ public enum Color {
     /**
      * Get the color representation
      */    
-    Color(final String representation) {
+    GuessColor(final String representation) {
         this.representation = representation;
     }
 

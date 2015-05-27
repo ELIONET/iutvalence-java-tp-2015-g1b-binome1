@@ -2,7 +2,7 @@ package fr.iutvalence.moturf.motus;
 
 /**
  * Tiles class
- * This class contains everything to make tiles inside the grid (Turn string into Tiles, Color etc...)
+ * This class contains everything to make tiles inside the grid (Turn string into Tiles, GuessColor etc...)
  *
  * @author dottc , lionete
  * @version 2.0
@@ -10,32 +10,32 @@ package fr.iutvalence.moturf.motus;
 public class Tiles {
     /** Character in the tiles. */
     private final char  charac;
-    /** Tiles color. */
-    private Color color;
+    /** Tiles guessColor. */
+    private GuessColor guessColor;
 
-    /** Make a tile with a given color. */
-    public Tiles(Color color, char c) {
+    /** Make a tile with a given guessColor. */
+    public Tiles(GuessColor guessColor, char c) {
         this.charac = c;
-        this.color = color;
+        this.guessColor = guessColor;
     }
-    /** Make a Tile with the "NEUTRAL" color. */
+    /** Make a Tile with the "NEUTRAL" guessColor. */
     public Tiles(char c) {
-        this(Color.NEUTRAL, c);
+        this(GuessColor.NEUTRAL, c);
     }
 
-    /** Get the tile color. */
-    public Color getColor() {
-        return this.color;
+    /** Get the tile guessColor. */
+    public GuessColor getColor() {
+        return this.guessColor;
     }
 
-    /** Set the tile color after check. */
-    public void setColor(Color newcolor) {
-        this.color = newcolor;
+    /** Set the tile guessColor after check. */
+    public void setColor(GuessColor newcolor) {
+        this.guessColor = newcolor;
     }
 
     @Override
     public String toString() {
-        return String.format("%s(%c)", color, charac);
+        return String.format("%s(%c)", guessColor, charac);
     }
     
     /** Get the char of the tiles**/

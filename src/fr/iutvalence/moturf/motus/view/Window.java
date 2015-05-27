@@ -54,6 +54,7 @@ public class Window extends JFrame implements Runnable, ActionListener {
 		@Override
 		public void run()
 		{
+			//TODO : Set bar size to 0.
 			
 			P1 = new JPanel();
 			P2 = new JPanel();

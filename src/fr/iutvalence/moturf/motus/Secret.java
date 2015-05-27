@@ -96,7 +96,7 @@ public class Secret {
 		 */
 		for (int i = 0; i < length; i++) {
 			if (tilesattempt[i].getChar() == secret[i].getChar()) {
-				tilesattempt[i].setColor(Color.GREEN);
+				tilesattempt[i].setColor(GuessColor.GREEN);
 			}
 		}
 		/*
@@ -104,7 +104,7 @@ public class Secret {
 		 * It will display O: (For ORANGE), else it will display N: (For NEUTRAL)
 		 */
 		for (int i = 0; i < length; i++) {
-			if (tilesattempt[i].getColor() != Color.GREEN) {
+			if (tilesattempt[i].getColor() != GuessColor.GREEN) {
 				int counterSecret = 0;
 				for (int j = 0; j < length; j++) {
 					if (tilesattempt[i].getChar() == secret[j].getChar()) {
@@ -117,15 +117,15 @@ public class Secret {
 					// We have to count the number of the current letter already put in the attempt 
 					// (up to index i) and then add the number of the current letter put in the attempt with GREEN color.
 					if (tilesattempt[i].getChar() == tilesattempt[j].getChar()) {
-						if (j <= i || tilesattempt[j].getColor() == Color.GREEN) {
+						if (j <= i || tilesattempt[j].getColor() == GuessColor.GREEN) {
 							counterAttempt++;
 						}
 					}
 				}
 
 				tilesattempt[i]
-						.setColor(counterAttempt <= counterSecret ? Color.ORANGE
-								: Color.NEUTRAL);
+						.setColor(counterAttempt <= counterSecret ? GuessColor.ORANGE
+								: GuessColor.NEUTRAL);
 			}
 		}
 
