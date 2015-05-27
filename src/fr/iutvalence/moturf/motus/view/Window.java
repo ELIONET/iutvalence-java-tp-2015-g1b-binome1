@@ -76,9 +76,8 @@ public class Window extends JFrame implements Runnable, ActionListener {
 			
 			P1.add(Output);
 			
-			//getContentPane().add(Split);		
-			//this.setSize(WIDTH, HEIGHT);
-			
+			getContentPane().add(Split);		
+			this.setSize(WIDTH, HEIGHT);
 			this.pack();
 			this.setVisible(true);
 
