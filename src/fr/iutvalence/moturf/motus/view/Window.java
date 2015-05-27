@@ -54,13 +54,17 @@ public class Window extends JFrame implements Runnable, ActionListener {
 		@Override
 		public void run()
 		{
-			JFrame window = new JFrame("Motus");
-			
 			
 			P1 = new JPanel();
 			P2 = new JPanel();
+			setResizable(false);
+			this.add(P1);
+			this.setTitle("Motus");
+			Split = new JSplitPane(JSplitPane.VERTICAL_SPLIT, P1, P2);
+			this.add(Split);
+			Split.setSize(WIDTH, HEIGHT);
+			P2.add(new IngameGridPanel());
 			
-			window.add(P1);
 			JLabel Instruction = new JLabel("Enter your guess (8 Char)");
 			P1.add(Instruction);
 			
@@ -72,15 +76,13 @@ public class Window extends JFrame implements Runnable, ActionListener {
 			
 			P1.add(Output);
 			
-			Split = new JSplitPane(JSplitPane.VERTICAL_SPLIT, P1, P2);
-			getContentPane().add(Split);
-			this.setTitle("Motus");
-			this.add(Split);
+			//getContentPane().add(Split);		
+			//this.setSize(WIDTH, HEIGHT);
+			
 			this.pack();
 			this.setVisible(true);
+
 			
-			Split.setBottomComponent(P2);
-			P2.add(new IngameGrid());
 		}
 
 		/**

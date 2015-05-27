@@ -42,7 +42,6 @@ public class Game {
 		boolean victory = false;
 		while ((turn < Grid.NB_LINES) && (!victory)) {
 			victory = true;
-			Window window = new Window();
 			System.out.println("Please, choose a word of 8 letters");
 			String attempt = scattempt.nextLine().toUpperCase().trim();
 
