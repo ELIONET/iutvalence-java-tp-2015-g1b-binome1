@@ -1,7 +1,7 @@
 package fr.iutvalence.moturf.motus.view;
 
 import javax.swing.*;
-import javax.swing.JSplitPane;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -59,6 +59,7 @@ public class Window extends JFrame implements Runnable, ActionListener {
 			
 			P1 = new JPanel();
 			P2 = new JPanel();
+			
 			window.add(P1);
 			JLabel Instruction = new JLabel("Enter your guess (8 Char)");
 			P1.add(Instruction);
@@ -77,6 +78,9 @@ public class Window extends JFrame implements Runnable, ActionListener {
 			this.add(Split);
 			this.pack();
 			this.setVisible(true);
+			
+			Split.setBottomComponent(P2);
+			P2.add(new IngameGrid());
 		}
 
 		/**
